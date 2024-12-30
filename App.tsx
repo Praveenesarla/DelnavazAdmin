@@ -10,6 +10,7 @@ import RecordingDetails from './src/screens/RecordingDetails';
 import {useSetupPlayer} from './src/hooks/useSetupPlayer';
 import {PaperProvider} from 'react-native-paper';
 import AuthProvider from './src/providers/AuthProvider';
+import LiveScreen from './src/screens/LiveScreen';
 
 const App = () => {
   const onLoad = () => {
@@ -19,7 +20,7 @@ const App = () => {
   return (
     <PaperProvider>
       <GestureHandlerRootView style={{flex: 1}}>
-        <MainNavigation />
+        <LiveScreen />
       </GestureHandlerRootView>
     </PaperProvider>
   );

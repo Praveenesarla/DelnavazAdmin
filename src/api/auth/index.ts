@@ -68,3 +68,12 @@ export const newPodcast = async (
     return error;
   }
 };
+
+export const getProfile = async () => {
+  try {
+    const response = await AuthAPIClient2.get('/me');
+    return response;
+  } catch (e: any) {
+    return e;
+  }
+};
