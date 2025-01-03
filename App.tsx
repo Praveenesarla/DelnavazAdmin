@@ -20,7 +20,7 @@ const App = () => {
   return (
     <PaperProvider>
       <GestureHandlerRootView style={{flex: 1}}>
-        <LiveScreen />
+        <MainNavigation />
       </GestureHandlerRootView>
     </PaperProvider>
   );

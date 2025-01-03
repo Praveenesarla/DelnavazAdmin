@@ -26,8 +26,8 @@ const LiveScreen = () => {
   const getDetails = async () => {
     try {
       const response = await getProfile();
-      console.log(response.data.data);
-      setUserDetails(response.data.data);
+      console.log('getdetails', response?.data?.data);
+      setUserDetails(response?.data?.data);
     } catch (error) {
       console.error('Error fetching profile details:', error);
     }
@@ -51,7 +51,7 @@ const LiveScreen = () => {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
-            userId: userDetails.full_name, // Use userDetails.full_name as userId
+            userId: userDetails._id, // Use userDetails.full_name as userId
             name: userDetails.full_name, // Use userDetails.full_name
             image: photo,
             email: userDetails.email, // Use userDetails.email
@@ -76,7 +76,7 @@ const LiveScreen = () => {
           const streamClient = StreamVideoClient.getOrCreateInstance({
             apiKey,
             user: {
-              id: userDetails.full_name, // Assuming full_name is the user ID
+              id: userDetails._id, // Assuming full_name is the user ID
               name: userDetails.full_name,
               image: photo,
             },

@@ -34,9 +34,10 @@ const LoginScreen = ({navigation}) => {
       try {
         setShowLoader(true);
         const res = await login(email, password);
+        console.log('loginsucess', res.data.token);
         if (res?.status === 200) {
-          console.log('ress', res.data.token);
-          setItem('authenticate', res.data.token);
+          console.log('ress sucess', res.data.token);
+          setItem('admin', res.data.token);
           setSuccess('200');
           setVisible(true);
         } else if (res?.status === 401) {

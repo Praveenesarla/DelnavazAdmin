@@ -36,7 +36,7 @@ const clear = async () => {
 
 const getToken = async () => {
   try {
-    const token = await getItem('authenticate');
+    const token = await getItem('admin');
     return token;
   } catch (error) {
     console.log(error);

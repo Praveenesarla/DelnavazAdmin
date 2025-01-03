@@ -18,14 +18,14 @@ import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const data = [
-  {label: 'History', value: '1'},
-  {label: 'Comedy', value: '2'},
-  {label: 'Literature', value: '3'},
-  {label: 'Biography', value: '4'},
-  {label: 'Mysticismا', value: '5'},
-  {label: 'Item 6', value: '6'},
-  {label: 'Item 7', value: '7'},
-  {label: 'Item 8', value: '8'},
+  {label: 'History', value: 'History'},
+  {label: 'Comedy', value: 'Comedy'},
+  {label: 'Literature', value: 'Literature'},
+  {label: 'Biography', value: 'Biography'},
+  {label: 'Mysticismا', value: 'Mysticismا'},
+  {label: 'English', value: 'English'},
+  {label: 'Children', value: 'Children'},
+  {label: 'Interview', value: 'Interview'},
 ];
 
 const RecordingDetails = ({navigation}) => {

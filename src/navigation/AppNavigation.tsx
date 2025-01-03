@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import RecordingDetails from '../screens/RecordingDetails';
 import RecordingEndScreen from '../screens/RecordingEndScreen';
 import RecordingScreen from '../screens/RecordingScreen';
+import LiveScreen from '../screens/LiveScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ const AppNavigation = () => {
       <Stack.Screen name="recordingDetails" component={RecordingDetails} />
       <Stack.Screen name="recordingEnd" component={RecordingEndScreen} />
       <Stack.Screen name="recording" component={RecordingScreen} />
+      <Stack.Screen name="Live" component={LiveScreen} />
     </Stack.Navigator>
   );
 };

@@ -77,3 +77,27 @@ export const getProfile = async () => {
     return e;
   }
 };
+
+export const newRoom = async (id: string) => {
+  try {
+    const response = await APIClient.post('/room', {
+      code: id,
+    });
+    console.log('resss', response);
+    return response.status;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteRoom = async (id: string) => {
+  try {
+    const response = await APIClient.post(`/room/${id}`, {
+      code: id,
+    });
+    console.log('resss', response);
+    return response.status;
+  } catch (error) {
+    console.log(error);
+  }
+};

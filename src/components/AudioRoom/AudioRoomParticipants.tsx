@@ -12,13 +12,13 @@ export const AudioRoomParticipants = () => {
         data={participants}
         renderItem={({item}) => (
           <View style={styles.avatar}>
-            <Image
+            {/* <Image
               style={[
                 styles.image,
                 item.isSpeaking && styles.activeSpeakerIndicator,
               ]}
               source={{uri: item.image}}
-            />
+            /> */}
             <Text style={styles.name}>{item.name}</Text>
           </View>
         )}

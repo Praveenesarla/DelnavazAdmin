@@ -1,11 +1,33 @@
 /* eslint-disable prettier/prettier */
 import {Image, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {horizontalScale, moderateScale, verticalScale} from '../../utils/scale';
 import {colors, fontsFamily} from '../../constants/fonts';
 import AppButton from '../../components/AppButton';
+import {getProfile} from '../../api/auth';
+import {getItem, getToken} from '../../api/localstorage';
 
 const HomeScreen = ({navigation}) => {
+  useEffect(() => {
+    getDetails();
+    tokencheck();
+  }, []);
+
+  const getDetails = async () => {
+    try {
+      const response = await getProfile();
+      console.log('ress', response.data.data);
+    } catch (error) {
+      console.error('Error fetching profile details:', error);
+    }
+  };
+
+  const tokencheck = async () => {
+    const repsonse = await getToken();
+
+    console.log('token', repsonse);
+  };
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.logoContainer}>
@@ -23,7 +45,9 @@ const HomeScreen = ({navigation}) => {
         <AppButton
           text="Go Live"
           backgroundColor={colors.red}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate('Live');
+          }}
           textColor={colors.white}
         />
         <View style={styles.orContainer}>

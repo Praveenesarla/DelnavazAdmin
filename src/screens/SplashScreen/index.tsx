@@ -11,7 +11,7 @@ const SplashScreen = ({navigation}) => {
 
   // Function to check authentication status
   const authStatusCheck = async () => {
-    const isAuthenticated = await getItem('authenticate');
+    const isAuthenticated = await getItem('admin');
     console.log(isAuthenticated);
     if (isAuthenticated) {
       navigation.replace('App');
